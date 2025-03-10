@@ -1,0 +1,340 @@
+    <!DOCTYPE html><!-- Esto es un nodo -->
+<html lang="es"><!-- etiqueta -->
+
+<!-- Elemento donde pondremos metadatos, info extra, que tipos de archivos css que vamos a renderizar, no se va a renderizar, pero pones info a nuestra página -->
+<head>
+    
+    <!-- Codificación(ya que igual hay emojis que no se verán) -->
+    <meta charset="utf-8">
+    
+    <!-- content: El ancho del contenido será el ancho de la pantalla para que en movil por ejemplo sea adapte para el ancho del movil-->
+    <meta name="viewport" content="width=device-width">
+
+    <!-- Titulo de nuestro documento -->
+    <title>Portfolio Adrián - Desarrollador Web Frontend</title>
+
+    <meta name="robots" content="index, follow"><!-- Indicamos si tiene que INDEXar la página y si tiene que SEGUIR los enlaces -->
+    <meta name="theme-color" content="#8F7ADA"> <!-- Metadato para que la parte del navegador donde sale la url sea del color que indicamos -->
+
+    <link rel="icon" type="image/jpg" href="/images/yo.jpg"><!-- El favicon hay que tenerlo en cuenta y está LINKeando un recurso-->
+
+    <!-- Etiquetas SEO -->
+    <meta name="description" content="Portfolio de Adrián Del Moral Martín, 1 año de experiencia de Desarrollador Web Frontend">
+
+    <!-- OPEN GRAPH(también son de SEO) -->
+    <!-- si no ponemos "og:title" va a hacer un fallback al title por defecto-->
+    <!-- "opg.me" - esta página nos indica todas las que podemos decir y usar para ello -->
+    <meta property="og:title" content="Desarrollador Web Frontend">
+    <meta property="og:description" content="Portfolio de Desarrollador Web Frontend">
+    <meta property="og:image" content="/images/yo.jpg">
+    <meta property="og:image:alt" content="Fotografia de Casco de Vayne">
+
+    <!-- Importantes en tema SEO -->
+    
+    <!-- enlazar a un recurso externo, que seria la alternativa a nuestra página - no vamos a poner otra página si no que, por ejemplo esta pagina está en ingles o español, pues ponemos lo mismo pero indicandolo en ingles: 
+    https://adrian.dev/es
+    pondriamos: https://adrian.dev/en
+    -->
+    <link rel="alternate" href="https://adrian.dev/en" hreflang="en-GB">
+
+    <!-- Indicamos cual es la página que realmente es la principal de nuestro sitio, importante porque canonical si busca google:
+        
+        www.adrian.dev o adrian.dev
+
+    las tratará como la misma página
+
+    Lo suyo es redireccionar a la segunda de esas dos(adrian.dev) pero hay veces que hay páginas que no las detecte como contenido duplicado, y hay que indicar cual es la "original"
+    -->
+    <link rel="canonical" href="https://adrian.dev">
+
+    <!-- Donde se ponen los estilos -->
+    <style>
+        body {
+            background: rgba(135, 221, 255, 0.9);
+        }
+    </style>
+
+</head>
+<body><!-- Lo que renderizamos en nuestra página -->
+    
+    <header>
+        <h1>Portfolio de Adrián 👨‍💻</h1>
+
+        <!-- <iframe
+            style="width: 100%; aspect-ratio: 16/9;"
+            src="https://www.youtube.com/embed/8aryHZ8Z9WY?si=Qf-_Eg9grt1J-ptK"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+        ></iframe> -->
+
+        <!-- <audio controls src="https://download.samplelib.com/mp3/sample-15s.mp3"></audio> -->
+
+        <!-- <video autoplay muted src="https://filesamples.com/samples/video/mp4/sample_960x400_ocean_with_audio.mp4"></video> -->
+
+        <dialog id="dialog">
+            <h1>¿sabías que puedes abrir una modal así?</h1>
+            <p>¡Y es totalmente nativo!</p>
+            <button id="hide">Cerrar Modal</button>
+        </dialog>
+        
+        <button id="show">Abrir Modal</button>
+        
+        <script>
+            /* Abrir Modal */
+            window.show.addEventListener('click', () => {
+                window.dialog.showModal()
+            })
+            
+            /* Cerrar Modal */
+            window.hide.addEventListener('click', () => {
+                window.dialog.close()
+            })
+        </script>
+
+        <nav>
+            <a href="#experiencia">Experiencia</a><!-- Enlaces Internos -->
+            <a href="#proyectos">Proyectos</a><!-- Enlaces Internos -->
+            <a href="https://www.twitch.tv/ifullstart" target="_blank" rel="noreferrer">Twitch</a><!-- Enlace Externo - que para que salte a una nueva ventana: target="_blank" -->
+        </nav>
+    </header>
+    
+    <main><!-- Contenido único que nunca se repite -->
+        <!-- b(bold) está deprecated, por eso se usa strong -->
+        <p>+1 Año de experiencia como <strong>Programador Web</strong>.</p>
+        
+        <h2 id="experiencia">Experiencia</h2>
+        
+        <ul><!-- Unordered_List -->
+            <!-- List_Item -->
+            <li class="list-item">Experiencia 1 - Año X</li>
+            <li class="list-item">Experiencia 2 - Año X</li>
+            <li class="list-item">Experiencia 3 - Año X</li>
+        </ul>
+        
+        <a download href="/images/yo.jpg">
+            <!-- Las etiquetas img no necesitan autocierre(en jsx si la necesitan) -->
+            <!-- src: es un atributos para informar a la etiqueta que queremos hacer 
+            - hay globales(en todos las etiquetas)
+            - especificos(de etiquetas, por ejemplo en imagenes el src(source))-->
+            <img 
+                id="photo-image"
+                width="200"
+                height="200"
+                title="Foto de Casco de Vayne"
+                src="/images/yo.jpg"
+                alt="Fotografía de Logo de Casco de Vayne de League Of Legends"
+            >
+        </a>
+
+        <h2 id="proyectos">Proyectos Realizados</h2>
+
+        <aside>
+            <header>
+                <h3>Mis tecnologías Favoritas</h3>
+            </header>
+            <ul>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+                <li>Node.Js</li>
+            </div>
+        </aside>
+        
+        <button>
+            Haz Clic Aquí
+        </button>
+
+        <section>
+            <article><!-- Elemento con información propia contenida, que si extraes ese elemento a otro sitio, sigue teniendo sentido -->
+                <header>
+                    <h4>La Página de Tesla</h4>
+                    <img 
+                        style="width:100%; aspect-ratio: 1919/876;"
+                        loading="lazy" 
+                        src="/images/tesla.png" 
+                        alt="Captura de pantalla de la página web de Tesla"
+                    >
+                </header>
+                <p>
+                    Desarrollo del sitio web Tesla con una interfaz llamativa y moderna.
+                </p>
+                <footer>
+                    <small><!-- No es que se vaya a hacer más pequeño solo,se suele utilizar por ejemplo, para temas de copyright, dar un tipo de explicación que sea muy secundaria, algo que no tenga mucha importancia, si no como contenido anexo, para dar algo de información que no sea tan impotante como al resto, como hacer incapié, poner referencias este tipo de cosas, aclaración "cortita" -->
+                        Tecnologías utilizadas: HTML, CSS, JavaScript
+                    </small>
+                </footer>
+            </article>
+
+            <article>
+                <header>
+                    <h4>Aplicación Web de E-Commerce</h4>                
+                </header>
+                <p>
+                    Creación de una plataforma de comercio electrónico para una tienda local.
+                </p>
+                <footer>
+                    <small>Tecnologías utilizadas: React, Node.js, MongoDB</small>
+                </footer>
+            </article>
+
+            <article>
+                <header>
+                    <h4>Aplicación Móvil de Rastreo de Fitness</h4>                
+                </header>
+                <p>
+                    Desarrollo de una aplicación móvil para rastrear actividades físicas y hábitos de alimentación.
+                </p>
+                <footer>
+                    <small>Tecnologías utilizadas: Flutter, Firebase</small>
+                </footer>
+            </article>
+        </section>
+
+        <section>
+            <h2>Preguntas frecuentes</h2>
+            
+            <details open>
+                <summary>¿Qué estudios tienes?</summary>
+                <p>
+                    Estudié en el Instituto Ies José Rodrigo Botet un Grado Superior de Programación Web durante 2 años.
+                </p>
+            </details>
+
+            <details>
+                <summary>¿Cuáles son tus hobbies?</summary>
+                <p>
+                    Me gusta mucho los videojuegos sobre todo el League Of Legends y el Call Of Duty.
+                </p>
+            </details>
+
+            <details>
+                <summary>¿Cuál es tu lenguaje favorito?</summary>
+                <p>
+                    Me encanta JavaScript, es un lenguaje muy versátil y con el que se pueden hacer muchas cosas.
+                </p>
+            </details>
+        </section>
+
+        <section>
+            <h2>Formulario de Contacto</h2>
+            <!-- Method(normalmente suele ser post) y la acción que seria a que url tiene que enviar todos los datos(en frameworks se hace de otra forma) -->
+            <form method="post" action="/">
+                <fieldset><!-- Agrupacion de los diferentes inputs que vamos a tener -->
+                    <legend>Información Personal</legend>
+                    
+                    <div style="display: block;">
+                        <label for="name"><!-- El atributo for, está haciendo referencia al input y es la que suele usarse -->
+                            Nombre:
+                        </label>
+                        <input 
+                            type="text" 
+                            name="name" 
+                            id="name" 
+                            placeholder="Adrián"
+                            required
+                        >
+                    </div>
+
+                    <label for="surname">
+                        Apellidos:
+                    </label>
+                        <input 
+                            type="text" 
+                            name="surname" 
+                            id="surname"
+                            placeholder="Del Moral Martín"
+                            required
+                            >
+
+                    <div>
+                        <label for="apodo">
+                            Apodo:
+                        </label>
+                            <input 
+                                type="text" 
+                                name="apodo" 
+                                id="apodo"
+                                placeholder="Adri"
+                                required
+                            >
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Información Adiconal</legend>
+                    <div>
+                        <label for="email">
+                            Email:
+                        </label>
+                        <input 
+                            type="email" 
+                            name="email" 
+                            id="email" 
+                            placeholder="adrian@gmail.com"
+                            required
+                        >
+                    </div>
+                    
+                    <!-- La otra forma de hacer referencia SIN ID: -->
+                    <label for="phone">
+                        Teléfono:
+                    </label>
+                        <input 
+                            type="tel" 
+                            name="phone" 
+                            id="phone"
+                            placeholder="643 543 534"
+                            required
+                            pattern="[0-9]{9}"
+                        >
+                </fieldset>
+
+                <fieldset>
+                    <legend>Otros</legend>
+
+                    <div>
+                        <label for="why">¿Por qué quieres contactar?</label>
+                        <select name="why" id="why">
+                            <option value="1">Trabajo</option>
+                            <option value="2">Duda</option>
+                            <option value="3">Más Información</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="terms">¿Aceptas los términos y Condiciones?</label>
+                        <input type="checkbox" name="terms" id="terms" required>
+                    </div>
+                    <div>
+                        <datalist id="lenguages">
+                            <option value="JavaScript"></option>
+                            <option value="TypeScript"></option>
+                            <option value="Java"></option>
+                            <option value="PHP"></option>
+                        </datalist>
+                        <label>
+                            ¿Con qué lenguaje quieres que te ayude?
+                            <input list="lenguages" name="lenguages">
+                        </label>
+                    </div>
+                    
+                </fieldset>
+
+                <button>Enviar Contacto</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        Copyright © 2025 - El portfolio más bonico del mundo
+
+        <a href="mailto:adrian.delmoral.martin@gmail.com">Envíame un correo</a>
+        <a href="tel:+34612345678">Llamar por teléfono</a>
+        <a href="whatsapp://send?Hola Adrián">Enviar Whatsap</a>
+
+    </footer>
+</body>
+</html>
+
